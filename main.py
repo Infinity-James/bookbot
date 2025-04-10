@@ -1,9 +1,10 @@
+from stats import get_num_words
+
 def frankenstein_word_count():
     try:
         with open('books/frankenstein.txt', 'r') as file:
             contents = file.read()
-        words = contents.split()
-        return len(words)
+        return get_num_words(contents)
     except FileNotFoundError:
         print("File not found")
     except Exception as e:
